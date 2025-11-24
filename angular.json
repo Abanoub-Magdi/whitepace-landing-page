@@ -50,6 +50,9 @@
             "github-pages": {
               "baseHref": "/whitepace-landing-page/",
               "outputHashing": "all",
+              "optimization": true,
+              "sourceMap": false,
+              "extractLicenses": true,
               "budgets": [
                 {
                   "type": "initial",
