@@ -48,6 +48,35 @@ To build the project for production:
 npm run build
 ```
 
+To build for GitHub Pages:
+
+```bash
+npm run build:github
+```
+
+## Deployment
+
+This project is configured for automatic deployment to GitHub Pages using GitHub Actions.
+
+### Automatic Deployment
+
+The project includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) that automatically:
+- Builds the application with the correct base href for GitHub Pages
+- Handles 404 errors for client-side routing
+- Deploys to GitHub Pages on every push to the `main` branch
+
+### Manual Setup
+
+1. Go to your repository Settings → Pages
+2. Under "Source", select "GitHub Actions"
+3. The workflow will automatically deploy on the next push to `main`
+
+### 404 Error Handling
+
+The project includes a `404.html` file that handles client-side routing errors on GitHub Pages. This ensures that all routes work correctly when users navigate directly to URLs or refresh the page.
+
+Your site will be available at: `https://YOUR_USERNAME.github.io/whitepace-landing-page/`
+
 ## Project Structure
 
 ```
