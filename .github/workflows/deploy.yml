@@ -53,6 +53,10 @@ jobs:
           ls -la dist/whitepace-app/ || echo "whitepace-app directory not found"
           ls -la dist/whitepace-app/browser/ || echo "browser directory not found"
           echo "--- Build output listing complete ---"
+          echo "Checking for CSS file..."
+          ls -la dist/whitepace-app/browser/*.css || echo "No CSS files found"
+          echo "Checking for assets..."
+          ls -la dist/whitepace-app/browser/assets/ || echo "No assets directory found"
 
       - name: Verify build output
         run: |
