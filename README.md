@@ -75,7 +75,7 @@ The project includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) 
 
 The project includes a `404.html` file that handles client-side routing errors on GitHub Pages. This ensures that all routes work correctly when users navigate directly to URLs or refresh the page.
 
-Your site will be available at: `https://YOUR_USERNAME.github.io/whitepace-landing-page/`
+Your site will be available at: `https://abanoub-magdi.github.io/whitepace-landing-page/`
 
 ## Project Structure
 
