@@ -1,0 +1,41 @@
+<section 
+  class="bg-white py-12 sm:py-16 lg:py-24"
+  role="region"
+  aria-label="Testimonials section">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col items-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-16 text-center">
+        What Our Clients <span class="underline-yellow">Says</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 w-full max-w-7xl">
+        @for (testimonial of testimonials; track testimonial.user.name; let i = $index) {
+          <article 
+            [class]="'p-6 sm:p-8 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 ' + testimonial.style"
+            [attr.aria-label]="'Testimonial from ' + testimonial.user.name"
+            role="article">
+            <div class="mb-4">
+              <svg 
+                class="w-8 h-8 mb-4 opacity-50" 
+                fill="currentColor" 
+                viewBox="0 0 24 24"
+                aria-hidden="true">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.984zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+              </svg>
+            </div>
+            <p class="mb-6 leading-relaxed text-sm sm:text-base">{{ testimonial.quote }}</p>
+            <div class="flex items-center gap-3 sm:gap-4">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full flex-shrink-0" 
+                   role="img" 
+                   [attr.aria-label]="'Avatar for ' + testimonial.user.name">
+              </div>
+              <div>
+                <div class="font-semibold text-sm sm:text-base">{{ testimonial.user.name }}</div>
+                <div class="text-xs sm:text-sm opacity-80">{{ testimonial.user.role }}</div>
+              </div>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,108 @@
+<footer 
+  class="bg-[#043873]"
+  role="contentinfo"
+  aria-label="Site footer">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-20 py-12 sm:py-16">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-8 border-t border-opacity-20 border-white pt-8">
+      <!-- Brand Column -->
+      <div class="col-span-1 sm:col-span-2 lg:col-span-1">
+        <a href="/home" class="inline-block mb-4 focus:outline-none focus:ring-2 focus:ring-[#4F9CF9] rounded-lg">
+          <img 
+            src="assets/logo-white.svg" 
+            alt="Whitepace logo" 
+            class="h-6 sm:h-8 w-auto"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <span class="text-white text-lg sm:text-xl font-bold hidden">Whitepace</span>
+        </a>
+        <p class="text-white mt-4 text-sm leading-relaxed opacity-90">
+          whitepace was created for the new ways we live and work. We make a better workspace around the world
+        </p>
+      </div>
+      
+      <!-- Product Links -->
+      <div class="col-span-1">
+        <h3 class="text-white font-semibold mb-4 text-base">Product</h3>
+        <ul class="space-y-2" role="list">
+          @for (link of productLinks; track link) {
+            <li>
+              <a 
+                href="#" 
+                class="text-white text-sm opacity-80 hover:opacity-100 hover:text-[#4F9CF9] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#4F9CF9] rounded">
+                {{ link }}
+              </a>
+            </li>
+          }
+        </ul>
+      </div>
+      
+      <!-- Resources Links -->
+      <div class="col-span-1">
+        <h3 class="text-white font-semibold mb-4 text-base">Resources</h3>
+        <ul class="space-y-2" role="list">
+          @for (link of resourcesLinks; track link) {
+            <li>
+              <a 
+                href="#" 
+                class="text-white text-sm opacity-80 hover:opacity-100 hover:text-[#4F9CF9] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#4F9CF9] rounded">
+                {{ link }}
+              </a>
+            </li>
+          }
+        </ul>
+      </div>
+      
+      <!-- Company Links -->
+      <div class="col-span-1">
+        <h3 class="text-white font-semibold mb-4 text-base">Company</h3>
+        <ul class="space-y-2" role="list">
+          @for (link of companyLinks; track link) {
+            <li>
+              <a 
+                href="#" 
+                class="text-white text-sm opacity-80 hover:opacity-100 hover:text-[#4F9CF9] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#4F9CF9] rounded">
+                {{ link }}
+              </a>
+            </li>
+          }
+        </ul>
+      </div>
+      
+      <!-- CTA Column -->
+      <div class="col-span-1 sm:col-span-2 lg:col-span-1">
+        <h3 class="text-white font-semibold mb-4 text-base">Try It Today</h3>
+        <p class="text-white mb-4 text-sm opacity-90">
+          Get started for free. Add your whole team as your needs grow.
+        </p>
+        <button 
+          type="button"
+          class="bg-[#4F9CF9] text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg arrow-icon-right transition-all duration-300 hover:bg-[#3B8AE8] hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#4F9CF9] focus:ring-offset-2 focus:ring-offset-[#043873] text-sm"
+          aria-label="Start today">
+          Start today
+        </button>
+      </div>
+    </div>
+    
+    <!-- Bottom Bar -->
+    <div class="flex flex-col sm:flex-row justify-between items-center pt-8 mt-8 border-t border-opacity-20 border-white gap-4 sm:gap-0">
+      <div class="flex flex-wrap justify-center sm:justify-start gap-4 sm:gap-6">
+        @for (link of utilityLinks; track link) {
+          <a 
+            href="#" 
+            class="text-white text-xs sm:text-sm opacity-80 hover:opacity-100 hover:text-[#4F9CF9] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#4F9CF9] rounded">
+            {{ link }}
+          </a>
+        }
+      </div>
+      <div class="flex gap-4 sm:gap-6">
+        @for (icon of socialIcons; track icon) {
+          <a 
+            href="#" 
+            class="text-white text-sm opacity-80 hover:opacity-100 hover:text-[#4F9CF9] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#4F9CF9] rounded"
+            [attr.aria-label]="icon + ' social media link'">
+            {{ icon }}
+          </a>
+        }
+      </div>
+    </div>
+  </div>
+</footer>

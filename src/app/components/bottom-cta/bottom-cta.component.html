@@ -1,0 +1,32 @@
+<section 
+  class="bg-[#043873] flex flex-col items-center py-12 sm:py-16 lg:py-24 px-4 sm:px-8 text-center"
+  role="region"
+  aria-label="Bottom call to action">
+  <div class="container mx-auto max-w-3xl">
+    <h2 class="text-white text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
+      Try Whitepace today
+    </h2>
+    <p class="text-white text-base sm:text-lg mb-6 sm:mb-8 opacity-90">
+      Get started for free. Add your whole team as your needs grow.
+    </p>
+    <button 
+      type="button"
+      class="bg-[#4F9CF9] text-white px-8 sm:px-10 py-3 sm:py-4 rounded-lg text-base sm:text-lg arrow-icon-right mb-6 sm:mb-8 transition-all duration-300 hover:bg-[#3B8AE8] hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#4F9CF9] focus:ring-offset-2 focus:ring-offset-[#043873]"
+      aria-label="Try Taskey free">
+      Try Taskey free
+    </button>
+    <p class="text-white mb-6 sm:mb-10 text-sm sm:text-base">
+      On a big team? <a href="#" class="underline hover:text-[#4F9CF9] transition-colors focus:outline-none focus:ring-2 focus:ring-[#4F9CF9] rounded">Contact sales</a>
+    </p>
+    <div class="flex flex-wrap justify-center gap-6 sm:gap-8">
+      @for (icon of osIcons; track icon) {
+        <div class="text-white text-sm sm:text-base transition-all duration-300 hover:text-[#4F9CF9] hover:scale-110 cursor-pointer" 
+             role="button"
+             [attr.aria-label]="'Download for ' + icon"
+             tabindex="0">
+          {{ icon }}
+        </div>
+      }
+    </div>
+  </div>
+</section>

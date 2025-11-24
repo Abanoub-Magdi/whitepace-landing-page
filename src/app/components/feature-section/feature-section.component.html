@@ -1,0 +1,81 @@
+<section 
+  [class]="'py-12 sm:py-16 lg:py-24 ' + (isDarkBackground ? 'bg-[#043873]' : 'bg-white')"
+  role="region"
+  [attr.aria-label]="'Feature section: ' + variant">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center"
+         [class.lg:flex-row-reverse]="isReversed">
+      @if (isReversed) {
+        <!-- Image First on Mobile, Last on Desktop -->
+        <div class="col-span-1 order-1 lg:order-1">
+          @if (variant === 'work-together') {
+            <div class="bg-gradient-to-br from-[#C4DEFD] to-[#A7CEFC] w-full h-64 sm:h-80 rounded-xl shadow-lg transform transition-all duration-300 hover:shadow-2xl hover:scale-105 flex items-center justify-center" 
+                 role="img" 
+                 aria-label="Work together diagram">
+              <svg class="w-32 h-32 text-[#4F9CF9]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="3" opacity="0.3"/>
+                <circle cx="6" cy="12" r="2" opacity="0.5"/>
+                <circle cx="18" cy="12" r="2" opacity="0.5"/>
+                <circle cx="12" cy="6" r="2" opacity="0.5"/>
+                <circle cx="12" cy="18" r="2" opacity="0.5"/>
+                <line x1="12" y1="9" x2="12" y2="15" stroke="currentColor" stroke-width="2"/>
+                <line x1="9" y1="12" x2="15" y2="12" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+          } @else {
+            <img 
+              src="assets/feature-illustration.png" 
+              alt="Feature illustration"
+              class="w-full h-64 sm:h-80 rounded-xl shadow-lg transform transition-all duration-300 hover:shadow-2xl hover:scale-105 object-cover"
+              onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80'; this.alt='Feature illustration';">
+          }
+        </div>
+        <div class="col-span-1 order-2 lg:order-2 text-center lg:text-left">
+          <h2 [class]="'text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 ' + (isDarkBackground ? 'text-white' : 'text-[#212529]')">
+            @if (highlight && highlightStyle) {
+              {{ titleParts.before }}<span [class]="highlightStyle">{{ titleParts.highlight }}</span>{{ titleParts.after }}
+            } @else {
+              {{ title }}
+            }
+          </h2>
+          <p [class]="'mb-6 sm:mb-8 leading-relaxed text-base sm:text-lg ' + (isDarkBackground ? 'text-white/90' : 'text-gray-600')">
+            {{ paragraph }}
+          </p>
+          <button 
+            type="button"
+            class="bg-[#4F9CF9] text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg arrow-icon-right transition-all duration-300 hover:bg-[#3B8AE8] hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#4F9CF9] focus:ring-offset-2"
+            aria-label="Get started">
+            {{ buttonText }}
+          </button>
+        </div>
+      } @else {
+        <!-- Content First -->
+        <div class="col-span-1 order-2 lg:order-1 text-center lg:text-left">
+          <h2 [class]="'text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 relative ' + (isDarkBackground ? 'text-white' : 'text-[#212529]')">
+            @if (highlight && highlightStyle) {
+              {{ titleParts.before }}<span [class]="highlightStyle">{{ titleParts.highlight }}</span>{{ titleParts.after }}
+            } @else {
+              {{ title }}
+            }
+          </h2>
+          <p [class]="'mb-6 sm:mb-8 leading-relaxed text-base sm:text-lg ' + (isDarkBackground ? 'text-white/90' : 'text-gray-600')">
+            {{ paragraph }}
+          </p>
+          <button 
+            type="button"
+            class="bg-[#4F9CF9] text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg arrow-icon-right transition-all duration-300 hover:bg-[#3B8AE8] hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#4F9CF9] focus:ring-offset-2"
+            aria-label="Get started">
+            {{ buttonText }}
+          </button>
+        </div>
+        <div class="col-span-1 order-1 lg:order-2">
+          <img 
+            src="assets/feature-illustration.png" 
+            alt="Feature illustration"
+            class="w-full h-64 sm:h-80 rounded-xl shadow-lg transform transition-all duration-300 hover:shadow-2xl hover:scale-105 object-cover"
+            onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80'; this.alt='Feature illustration';">
+        </div>
+      }
+    </div>
+  </div>
+</section>

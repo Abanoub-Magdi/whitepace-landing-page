@@ -1,0 +1,16 @@
+/* App component styles */
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+/* Ensure proper spacing for fixed navbar */
+main {
+  padding-top: 4rem; /* Space for fixed navbar */
+}
+
+@media (min-width: 1024px) {
+  main {
+    padding-top: 5rem;
+  }
+}
