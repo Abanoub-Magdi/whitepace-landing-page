@@ -100,10 +100,26 @@ EOF
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
+      - name: Verify files before upload
+        run: |
+          echo "=== Verifying build output ==="
+          echo "Contents of dist/whitepace-app/browser:"
+          ls -la dist/whitepace-app/browser/
+          echo ""
+          echo "Checking for index.html:"
+          test -f dist/whitepace-app/browser/index.html && echo "✓ index.html exists" || echo "✗ index.html missing"
+          echo "Checking for CSS file:"
+          ls dist/whitepace-app/browser/*.css && echo "✓ CSS file exists" || echo "✗ CSS file missing"
+          echo "Checking for JS files:"
+          ls dist/whitepace-app/browser/*.js | head -3 && echo "✓ JS files exist" || echo "✗ JS files missing"
+          echo "File count:"
+          find dist/whitepace-app/browser -type f | wc -l
+          echo "=== Verification complete ==="
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist/whitepace-app/browser'
+          path: dist/whitepace-app/browser
 
   deploy:
     environment:
