@@ -2,6 +2,8 @@
 
 A modern Angular application for the Whitepace landing page, featuring a sleek 2026 design built with Tailwind CSS.
 
+![Project Preview](assets/project_preview.png)
+
 ## Features
 
 - Modern, responsive 2026 design
